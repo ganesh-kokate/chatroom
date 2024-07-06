@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title> Code Buddy </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <body>
+
+        <div class="form">
+            <div class="login">
+                <div class="login-header">
+                    <h3>Login</h3>
+                    <p>login your account.</p>
+                </div>
+            </div>
+            <form class="login-form" action="login" method="post" th:action="@{/login}">
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+    <input type="text" id="username" name="username" placeholder="username" required>
+    <input type="password" id="password" name="password" placeholder="password" required>
+    
+    <button type="submit">Login</button>
+    <p class="message">don't have an account? <a href="signup.html">Signup</a></p>
+    <p class="message">forgot password ?<a href="forgot.html">reset it</a></p>
+</form>
+
+
+        </div>
+    </body>
+    <script src="script.js"></script>
+</body>
+
+</html>

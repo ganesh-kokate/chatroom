@@ -1,0 +1,56 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Chat Room </title>
+
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+   
+<script src="/webjars/jquery/jquery.min.js"></script>
+
+        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/script.js"></script>
+   
+
+
+</head>
+<body  >
+
+Welcome: <span id="username" th:text="${user.username}"></span>
+
+
+                            <input type="text"
+                                   placeholder="Enter your message "
+                                   id="message-value"
+                                   autofocus
+                                   class="form-control"
+                            >
+
+                            
+
+                                <button class="btn btn-dark" id="send-btn" onclick="sendMessage()">Send</button>
+                               <a href="/logout"> <button class="btn btn-dark" id="logout">Logout</button></a>
+
+                            
+
+
+
+                  
+
+
+                      
+                            <table id="message-container-table">
+
+                            </table>
+
+                        
+
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+  
+</body>
+</html>
